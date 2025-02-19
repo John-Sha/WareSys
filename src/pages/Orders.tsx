@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AlignVerticalJustifyCenter, FileText, Package, Squircle, TrendingDown, TrendingUp } from 'lucide-react';
+import { FileText, Package, Squircle, TrendingDown, TrendingUp } from 'lucide-react';
 
 interface Order {
   id: string;
