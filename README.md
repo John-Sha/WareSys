@@ -1,4 +1,4 @@
-## WareSys, by Srcbook
+## WareSys, a WareHouse Order Management System
 
 
 To run the devserver:
