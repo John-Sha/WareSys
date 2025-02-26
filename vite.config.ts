@@ -10,54 +10,8 @@ export default defineConfig({
 
       // ref: https://vite.dev/guide/api-plugin.html#transformindexhtml
       transformIndexHtml(html) {
-        if (process.env.NODE_ENV !== "development" && process.env.SHOW_WATERMARK !== "false") {
-          return [
-            {
-              tag: "style",
-              attrs: { type: "text/css" },
-              injectTo: "head",
-              children: `
-                .srcbook-watermark {
-                  position: fixed;
-                  bottom: 16px;
-                  right: 16px;
-                  background: white;
-                  border-radius: 8px;
-                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                  display: flex;
-                  align-items: center;
-                  padding: 8px 12px;
-                  z-index: 9999;
-                  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                  font-size: 14px;
-                  font-weight: bold;
-                  color: #000;
-                  gap: 8px;
-                  border: 1px solid #e6e6e6;
-                  background: linear-gradient(to bottom, #FFFFFF, #F9F9F9);
-                  cursor: pointer;
-                  transition: all 0.2s ease-in-out;
-                }
-                .srcbook-watermark:hover {
-                  transform: translateY(-2px);
-                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                }
-                .srcbook-watermark:active {
-                  transform: translateY(0);
-                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                }
-                .srcbook-watermark img {
-                  width: 16px;
-                  height: 16px;
-                }
-              `,
-            },
-            {
-              tag: "script",
-              attrs: { type: "module" },
-              injectTo: "body",
-              
-
+        // Completely removed the watermark injection code
+        
         return [
           {
             tag: "script",
@@ -111,7 +65,7 @@ export default defineConfig({
         ];
       },
 
-      transform(src: string, id: string) {
+      transform(src, id) {
         if (id === "/app/src/main.tsx") {
           return `
             ${src}
