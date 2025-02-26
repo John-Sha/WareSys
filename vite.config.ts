@@ -56,20 +56,7 @@ export default defineConfig({
               tag: "script",
               attrs: { type: "module" },
               injectTo: "body",
-              children: `
-                const watermark = document.createElement('a');
-                watermark.href = 'https://www.srcbook.com?a_id=' + encodeURIComponent('019518bb-d0a1-74c4-8514-a2973e4f94ef');
-                watermark.target = '_blank';
-                watermark.className = 'srcbook-watermark';
-                watermark.innerHTML = \`
-                  <img src="https://assets.srcbook.com/favicon.svg" alt="Srcbook Logo" />
-                  Made in Srcbook
-                \`;
-                document.body.appendChild(watermark);
-              `,
-            },
-          ];
-        }
+              
 
         return [
           {
